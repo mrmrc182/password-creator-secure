@@ -11,8 +11,10 @@ function generatePassword() {
   var password = "";
   var length= 0;
   var output= "";
+  var chooseUpper= false;
   var chooseLower = false;
   var chooseNumber = false;
+  var chooseChar = false;
   
   var length = prompt("How long do you want your password to be?");
   if (length < 5 || length > 128) {
@@ -20,17 +22,50 @@ function generatePassword() {
     return("");
   }
   var chooseUpper = confirm("Do you want uppercase letters?");
-  if(chooseUpper = true){
+  if(chooseUpper === true){
     output = upperCase; 
     console.log("Choose upper");
     console.log(output);
   }
   else{
-    output = ("");
-    console.log("none");
+    output = "";
+    console.log(output);
+  }
+  var chooseLower = confirm("Do you want lowercase letters?");
+  if(chooseLower === true){
+    output = lowerCase; 
+    console.log("Choose lower");
+    console.log(output);
+  }
+  else{
+    output = "";
+    console.log(output);
+  }
+  var chooseNumber = confirm("Do you want numbers?");
+  if(chooseNumber === true){
+    output = numbers; 
+    console.log("Choose number");
+    console.log(output);
+  }
+  else{
+    output = "";
+    console.log(output);
+  }
+  var chooseChar = confirm("Do you want special characters?");
+  if(chooseChar === true){
+    output = characters; 
+    console.log("Choose character");
+    console.log(output);
+  }
+  else{
+    output = "";
+    console.log(output);
+  }
+  if(output === ""){
+    alert("You must choose one option");
   }
   
-  password=output.repeat(length);
+  password=output;
 
   // TODO: add code to generate the password here
 
